@@ -165,3 +165,67 @@
 # Getting Started With Our Project
 
 - Go to the collaboration and create the new worksheet calculator
+
+- Create validation worksheet and get the unique job_titles and sort them based on their count in the data worksheet
+
+- For excel 2019 we cannot use unique function to get the unique job titles
+
+#### Algorithm to find unique values from one column
+
+- step1: Create the helper column where you get the row number of the job title which occur first time
+- step2: Use if condition and pass `COUNTIF` and provide range of first cell to that same cell and fix the cell reference of first cell in range example `$A$2:A2` so that when we autofill it will check all the cells from start to check the A2 appear how many times
+- step3: As we know we want unique values the above method should return only 1 count and based on that we will return the row index using `ROW()` in if condition else we will return "" empty cell
+- step4: Now go to the data validation table and create the column with header job_title_short use `MATCH()` to find the index of the small row number from that helper function and use `SMALL()` which takes range and which small number you want from that range starting from first to number you provide then match that lookup number using match function to get cell reference of that number from the range
+- step5: Once you got the cell reference we can use `INDEX()` method to get the value from job_title_short column which are unique
+
+#### Algorithm to sort the job_titles
+
+- we have to sort the values based on the count of job_titles
+- step1: create the helper column which rank the all count starting from 1 to n
+- step2: Use that helper column and find the cell reference using match function and the lookup value in the match function should start from 1
+- step3: after getting the cell reference find the value by passing it inside the index function
+
+#### Task: Sort count using above algorithm
+
+## Creating data validation
+
+- Go to calculator worksheet and create data validation in front of the job title cell
+- Go to data tab -> in allow: click on dropdown and select list because we are adding the job_title there
+
+- As we done this the values other than the list we provide will not get accepted
+
+- We are doing this to calculate the median salary based on the values in that data validated cell
+
+## Finding the median salary based on the value in data validation dropdown we created
+
+- Create new worksheet named salary
+- Copy the sorted job title from it
+- Find the median salary using custom median formula
+
+- now sort it based on the median salary in descending order
+
+- Create the cell where you can out the median salary based on the value you from the data validation dropdown you have created
+
+## Protecting data or your work from co-workers
+
+- select all cells
+
+- Unselect the data validated cell which has the dropdown
+
+- Got to review tab -> select protect the sheet -> and unclick the select the locked cells
+
+- Click on the worksheet and hide it and if you want to un-hide the worksheet you can right click on it and select the worksheet name to un-hide it
+
+# Creating the dashboard of our project and formatting the all stuff
+
+- Place the content as per our dashboard
+
+## Creating country type
+
+- Create worksheet name country
+
+- Create the column country in the data validation worksheet and get the unique country names and sort them alphabetically
+
+- Create the copy of country and paste it as special -> values
+
+- select all country copy -> go to data tab -> sort it A->Z
