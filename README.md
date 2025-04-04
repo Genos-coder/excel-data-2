@@ -204,7 +204,7 @@
 
 - now sort it based on the median salary in descending order
 
-- Create the cell where you can out the median salary based on the value you from the data validation dropdown you have created
+- Create the cell where you can get the median salary based on the value you from the data validation dropdown you have created
 
 ## Protecting data or your work from co-workers
 
@@ -229,3 +229,46 @@
 - Create the copy of country and paste it as special -> values
 
 - select all country copy -> go to data tab -> sort it A->Z
+
+- Now go to calculator worksheet and create country header and under that create data validation and add those sorted countries
+
+## Job Schedule type
+
+- create helper column and find the unique job schedule type in validation worksheet
+
+- Filter down them to single job type
+
+- Take the filtered value into another column
+
+- create the header type and add dropdown using data validation and filtered job schedule type
+
+## Median salary according to country
+
+- Create the country worksheet copy paste the unique job countries
+
+- get the median salary according to them
+
+- also filter the median salary based on the job title we select
+
+## NOTE: You can check the names you provided to the cell by going to the formulas tab -> name manager or (ctrl+F3)
+
+- Add one more filter while calculating the median salary according to the title we select
+
+- Also also filter the median salary according to type
+
+- Make more precision
+
+```
+=MEDIAN(
+     IF(
+          (jobs[job_country]=A2)*
+          (jobs[salary_year_avg]<>0)*
+          (jobs[job_title_short]=title)*
+          (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),jobs[salary_year_avg]))
+```
+
+- Now make the column of those country who has median salary not a num error and sort them from highest to lowest
+
+- Create the map using country and median salary column
+
+## Manipulating the graphs based on job title
