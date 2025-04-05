@@ -267,8 +267,48 @@
           (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),jobs[salary_year_avg]))
 ```
 
-- Now make the column of those country who has median salary not a num error and sort them from highest to lowest
+- Now make the column of those country who has median salary not a num error (create the helper column and get row number of countries who has number using is number-> create the column where you get all countries using those row number)
+
+- sort this country with highest to lowest median salary
 
 - Create the map using country and median salary column
 
-## Manipulating the graphs based on job title
+## Changes
+
+- Change the median formula of job_title by adding more conditions
+
+- first -> country, second-> type
+
+## Clustered bar with data manipulation
+
+- go to the salary create two columns one column should have the median salary of all job title which does not match the title we select from dropdown and second column has reverse of it
+
+- create the chart using those two columns and job title column
+
+- solve the error #N/A which occur in salary worksheet
+
+- format the x-axis eg 100000->100K
+
+- Remove the legend from chart
+
+- go to the chart design and change color of chart
+
+## Median salary with respect to type
+
+- Create worksheet named type
+
+- copy paste the unique types
+
+- use same formula to find median salary
+
+- also filter them based on there is value or #N/A error same as of
+
+## Create manipulated chart for job type
+
+- use same method as of the job title
+
+## Creating kpi cards
+
+- Remove the median salary header and the cell
+
+- Now go to the insert -> add the rectangle -> click on rectangle -> go to formula bar -> add median salary there
