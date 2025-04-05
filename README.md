@@ -301,7 +301,7 @@
 
 - use same formula to find median salary
 
-- also filter them based on there is value or #N/A error same as of
+- also filter them based on there is value or #N/A error same as of country
 
 ## Create manipulated chart for job type
 
@@ -312,3 +312,25 @@
 - Remove the median salary header and the cell
 
 - Now go to the insert -> add the rectangle -> click on rectangle -> go to formula bar -> add median salary there
+
+- change the formatting of the median salary
+
+## Creating kpi for job platform
+
+- Create the platform worksheet and get the unique job platform
+
+- In the adjacent cell we want the count of salary we can get from that platform
+
+```
+=COUNT(IF((jobs[job_title_short]=title)*(ISNUMBER(SEARCH(type,jobs[job_schedule_type])))*(jobs[job_country]=country)*(jobs[job_via]=A2),jobs[salary_year_avg]))
+```
+
+- sort them from high to low
+
+- now get the first platform name into another cell and name the cell as platform
+
+- now create the KPI and add the platform in it under the map chart
+
+## Manipulate the count of the job titles in data validation by adding the filter sam as of the job platform
+
+- get the highest count in different cell and make kpi from it
